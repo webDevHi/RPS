@@ -1,2 +1,1 @@
-# RPS
-Rock Paper scissors game to be played in a browser
+In this project I create a barebones rock paper scissors game to be played in a browser. I demonstrate my knolwedge of conditional, functional, and iterational programming in javascript. I also use rudimentary git knowledge and html/css knowledge.
