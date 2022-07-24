@@ -6,10 +6,11 @@ function getComputerChoice(rpsSelection){
 
 let computerChoice = getComputerChoice(rpsSelection);
 
-const playerChoice = window.prompt("Rock, paper, or scissors: ");
+const playerChoice = prompt("Rock, paper, or scissors: ").toLowerCase();
 
 function playRps(computerChoice, playerChoice){
-    console.log('???')
+    console.log('???');
+    console.log(playerChoice)
     if (computerChoice == playerChoice){
             alert('tie!')
             console.log(1)}
