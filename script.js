@@ -4,11 +4,7 @@ function getComputerChoice(rpsSelection){
     return rpsSelection[ranNumber];
 };
 
-let computerChoice = getComputerChoice(rpsSelection);
-
-const playerChoice = prompt("Rock, paper, or scissors: ").toLowerCase();
-
-function playRps(computerChoice, playerChoice){
+function playRound(computerChoice, playerChoice){
     console.log('???');
     console.log(playerChoice)
     if (computerChoice == playerChoice){
@@ -33,9 +29,16 @@ function playRps(computerChoice, playerChoice){
             alert('you lose, rock beats scissors...')
             console.log(7)}
         else if (computerChoice == 'scissors' && playerChoice == 'paper'){
-           alert('you lose, scissors beats rock...')
+           alert('you lose, scissors beats paper...')
             console.log(8)};
 };
-playRps(computerChoice, playerChoice);
 
+function game(playRound){
+    for (let i = 0; i < 5; i++ ){
+        let computerChoice = getComputerChoice(rpsSelection);
+        let playerChoice = prompt("Rock, paper, or scissors: ").toLowerCase();
+        playRound(computerChoice, playerChoice);
+    };
+};
 
+game(playRound);
