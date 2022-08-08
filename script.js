@@ -1,11 +1,11 @@
 let rpsSelection = ['rock', 'paper', 'scissors'];
+
 function getComputerChoice(rpsSelection){
     let ranNumber = Math.floor(Math.random() * 3);
     return rpsSelection[ranNumber];
 };
 
 function playRound(computerChoice, playerChoice){
-    console.log('???');
     console.log(playerChoice)
     if (computerChoice == playerChoice){
             alert('tie!')
@@ -33,12 +33,22 @@ function playRound(computerChoice, playerChoice){
             console.log(8)};
 };
 
-function game(playRound){
+function findPlayerChoice() {
+    const rock = document.querySelector('#rock');
+        rock.addEventListener('click', () => {playRound(getComputerChoice(rpsSelection), 'rock')})
+    const scissors = document.querySelector('#scissors')
+        scissors.addEventListener('click', () => {playRound(getComputerChoice(rpsSelection)), 'scissors'})
+    const paper = document.querySelector('#paper')
+        paper.addEventListener('click', () => {playRound(getComputerChoice(rpsSelection), paper)})
+};
+
+/*function game(playRound){
     for (let i = 0; i < 5; i++ ){
         let computerChoice = getComputerChoice(rpsSelection);
-        let playerChoice = prompt("Rock, paper, or scissors: ").toLowerCase();
+        playerChoice = findPlayerChoice()
+        console.log(playerChoice)
         playRound(computerChoice, playerChoice);
     };
 };
-
-game(playRound);
+*/
+findPlayerChoice()
