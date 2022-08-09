@@ -6,40 +6,64 @@ function getComputerChoice(rpsSelection){
 };
 
 function playRound(computerChoice, playerChoice){
-    console.log(playerChoice)
+    const container = document.querySelector('.results')
     if (computerChoice == playerChoice){
-            alert('tie!')
-            console.log(1)}
+            const content = document.createElement('div')
+            content.textContent = 'tie!'
+            console.log(1)
+            container.appendChild(content)
+            }
         else if (computerChoice == 'rock' && playerChoice == 'scissors'){
-            alert('you lose, rock beats scissors..')
-            console.log(2)}
+            const content = document.createElement('div')
+            content.textContent = 'you lose, rock beats scissors..'
+            container.appendChild(content)
+            console.log(2)
+            }
         else if (computerChoice == 'scissors' && playerChoice == 'rock'){
-            alert('you win! rock beats scissors')
-            console.log(3)}
+            const content = document.createElement('div')
+            content.textContent = 'you win, rock beats scissors!'
+            container.appendChild(content)
+            console.log(3)
+            }
         else if(computerChoice == 'paper' && playerChoice == 'scissors'){
-            alert('you win! scissors beats paper!')
-            console.log(4)}
+            const paragraph = document.createElement('div')
+            paragraph.textContent = 'you win! scissors beats paper!'
+            container.appendChild(paragraph)
+            console.log(4)
+            }
         else if (computerChoice == 'rock' && playerChoice == 'paper'){
-            alert('you win! Paper beats rock')
-            console.log(5)}
+            const paragraph = document.createElement('div')
+            paragraph.textContent = 'you win! Paper beats rock'
+            container.appendChild(paragraph)
+            console.log(5)
+            }
         else if (computerChoice == 'paper' && playerChoice == 'rock'){
-            alert('you lose, paper beats rock...')
-            console.log(6)}
+            const paragraph = document.createElement('div')
+            paragraph.textContent = 'you lose Paper beats rock...'
+            container.appendChild(paragraph)
+            console.log(6)
+            }
         else if (computerChoice == 'rock' && playerChoice == 'scissors'){
-            alert('you lose, rock beats scissors...')
-            console.log(7)}
+            const paragraph = document.createElement('p')
+            paragraph.textContent = 'you lose, rock beats scissors...'
+            container.appendChild(paragraph)
+            console.log(7)
+            }
         else if (computerChoice == 'scissors' && playerChoice == 'paper'){
-           alert('you lose, scissors beats paper...')
-            console.log(8)};
+            const paragraph = document.createElement('div')
+            paragraph.textContent = 'you lose, scissors beats paper'
+            container.appendChild(paragraph)
+            console.log(8)
+            };
 };
 
 function findPlayerChoice() {
     const rock = document.querySelector('#rock');
         rock.addEventListener('click', () => {playRound(getComputerChoice(rpsSelection), 'rock')})
     const scissors = document.querySelector('#scissors')
-        scissors.addEventListener('click', () => {playRound(getComputerChoice(rpsSelection)), 'scissors'})
+        scissors.addEventListener('click', () => {playRound(getComputerChoice(rpsSelection), 'scissors')})
     const paper = document.querySelector('#paper')
-        paper.addEventListener('click', () => {playRound(getComputerChoice(rpsSelection), paper)})
+        paper.addEventListener('click', () => {playRound(getComputerChoice(rpsSelection), 'paper')})
 };
 
 /*function game(playRound){
